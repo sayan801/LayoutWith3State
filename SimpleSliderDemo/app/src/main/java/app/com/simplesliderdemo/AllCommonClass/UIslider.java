@@ -6,7 +6,9 @@ import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
@@ -80,41 +82,29 @@ public class UIslider extends LinearLayout
             @Override
             public void onClick(View view)
             {
-                // onClick change the State..by increasing value programetically
-                step = step + 33;
+//                commonMethodForChangeState();
+            }
+        });
 
-                if (step == 33)
+        LL_middle.setOnTouchListener(new OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View v, MotionEvent event)
+            {
+                if(event.getAction() == MotionEvent.ACTION_UP)
                 {
-                    //for Default view
-                    LL_top.setVisibility(View.VISIBLE);
-                    LL_bottom.setVisibility(View.VISIBLE);
-
-                    LL_bottom.getLayoutParams().height = (int) (DeviceTotalHeight * 45 / 100);
-                    LL_middle.getLayoutParams().height = (int) (DeviceTotalHeight * 8 / 100);
-                    LL_top.getLayoutParams().height = (int) (DeviceTotalHeight * 45 / 100);
-                }
-                else if (step == 66)
-                {
-                    //slider Top positon
-                    LL_top.setVisibility(View.GONE);
-                    LL_bottom.setVisibility(View.VISIBLE);
-
-                    LL_bottom.getLayoutParams().height = (int) (DeviceTotalHeight * 90 / 100);
-                    LL_middle.getLayoutParams().height = (int) (DeviceTotalHeight * 10 / 100);
+//                    commonMethodForChangeState();
+//                    Toast.makeText(getContext(),"UP",Toast.LENGTH_SHORT).show();
+                    Log.d("<> UP", " ^ Up");
+                    // Do what you want
+                    return true;
                 }
                 else
                 {
-                    //slider should be Buttom positon
-                    LL_top.setVisibility(View.VISIBLE);
-                    LL_bottom.setVisibility(View.GONE);
-
-                    LL_top.getLayoutParams().height = (int) (DeviceTotalHeight * 90 / 100);
-                    LL_middle.getLayoutParams().height = (int) (DeviceTotalHeight * 10 / 100);
+//                    Toast.makeText(getContext(),"Down",Toast.LENGTH_SHORT).show();
+                    Log.d("<> Down", " ~ Down");
                 }
-
-                //continue this Loop
-                if (step == noOfsteate)
-                    step = 0; //moved to initial State
+                return false;
             }
         });
 
@@ -124,5 +114,44 @@ public class UIslider extends LinearLayout
 //        Activity activity = (Activity) context;//casting context into activity
         LayoutInflater.from(context).inflate(R.layout.ui_slider_common_control, this, true);
         /** after Loading complete of this... then automatically call 'onFinishInflate()' method. **/
+    }
+
+    public void commonMethodForChangeState()
+    {
+        // onClick change the State..by increasing value programetically
+        step = step + 33;
+
+        if (step == 33)
+        {
+            //for Default view
+            LL_top.setVisibility(View.VISIBLE);
+            LL_bottom.setVisibility(View.VISIBLE);
+
+            LL_bottom.getLayoutParams().height = (int) (DeviceTotalHeight * 45 / 100);
+            LL_middle.getLayoutParams().height = (int) (DeviceTotalHeight * 8 / 100);
+            LL_top.getLayoutParams().height = (int) (DeviceTotalHeight * 45 / 100);
+        }
+        else if (step == 66)
+        {
+            //slider Top positon
+            LL_top.setVisibility(View.GONE);
+            LL_bottom.setVisibility(View.VISIBLE);
+
+            LL_bottom.getLayoutParams().height = (int) (DeviceTotalHeight * 90 / 100);
+            LL_middle.getLayoutParams().height = (int) (DeviceTotalHeight * 10 / 100);
+        }
+        else
+        {
+            //slider should be Buttom positon
+            LL_top.setVisibility(View.VISIBLE);
+            LL_bottom.setVisibility(View.GONE);
+
+            LL_top.getLayoutParams().height = (int) (DeviceTotalHeight * 90 / 100);
+            LL_middle.getLayoutParams().height = (int) (DeviceTotalHeight * 10 / 100);
+        }
+
+        //continue this Loop
+        if (step == noOfsteate)
+            step = 0; //moved to initial State
     }
 }
