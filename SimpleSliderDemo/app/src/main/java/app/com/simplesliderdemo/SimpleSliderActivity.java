@@ -1,5 +1,6 @@
 package app.com.simplesliderdemo;
 
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -12,15 +13,20 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.GoogleMap;
+
 import java.util.ArrayList;
 
-public class SimpleSliderActivity extends AppCompatActivity
+public class SimpleSliderActivity extends FragmentActivity
 {
 
 //    TextView middle;
     LinearLayout top, bottom, middle;
     int DeviceTotalWidth, DeviceTotalHeight;
     int i = 33; // Initial value shoud be 33 for Default State
+
+    //for Google map
+    GoogleMap map;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {

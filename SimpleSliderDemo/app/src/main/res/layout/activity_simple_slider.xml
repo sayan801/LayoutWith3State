@@ -14,13 +14,17 @@
         android:background="@android:color/holo_green_dark"
         android:gravity="center"
         android:orientation="vertical"
-        ></LinearLayout>
+        >
+        <fragment
+            class="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/LL_middle"
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"
+        android:layout_height="wrap_content"
         android:background="@android:color/black"
         android:gravity="center"
         android:orientation="vertical"
@@ -29,8 +33,7 @@
         android:id="@+id/TV_middle"
         android:text="Counted search results"
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:background="@android:color/holo_blue_bright"
         android:gravity="center_horizontal|center"
         />
