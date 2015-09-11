@@ -7,15 +7,24 @@
     tools:context=".SimpleSliderActivity" >
 
     <LinearLayout
-        android:id="@+id/TV_top"
-
+        android:id="@+id/LL_top"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
         android:background="@android:color/holo_green_dark"
         android:gravity="center"
         android:orientation="vertical"
-        />
+        ></LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LL_middle"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:background="@android:color/black"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
     <TextView
         android:id="@+id/TV_middle"
         android:text="Counted search results"
@@ -23,18 +32,24 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@android:color/holo_blue_bright"
-        android:gravity="left|center"
+        android:gravity="center_horizontal|center"
         />
+    </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/TV_bottom"
-
+        android:id="@+id/LL_bottom"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
-        android:background="@android:color/holo_green_light"
         android:gravity="center"
         android:orientation="vertical"
-        />
+        >
+        <ListView
+            android:id="@+id/LV_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            />
+    </LinearLayout>
 
 </LinearLayout>

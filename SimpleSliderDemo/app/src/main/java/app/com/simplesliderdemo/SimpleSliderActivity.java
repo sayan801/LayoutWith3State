@@ -7,14 +7,18 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class SimpleSliderActivity extends AppCompatActivity
 {
 
-    TextView middle;
-    LinearLayout top, bottom;
+//    TextView middle;
+    LinearLayout top, bottom, middle;
     int DeviceTotalWidth, DeviceTotalHeight;
     int i = 33; // Initial value shoud be 33 for Default State
     @Override
@@ -23,9 +27,9 @@ public class SimpleSliderActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_slider);
 
-        top = (LinearLayout) findViewById(R.id.TV_top);
-        middle = (TextView) findViewById(R.id.TV_middle);
-        bottom = (LinearLayout) findViewById(R.id.TV_bottom);
+        top = (LinearLayout) findViewById(R.id.LL_top);
+        middle = (LinearLayout) findViewById(R.id.LL_middle);
+        bottom = (LinearLayout) findViewById(R.id.LL_bottom);
 
         DisplayMetrics metrics = getResources().getDisplayMetrics();
 
@@ -80,5 +84,14 @@ public class SimpleSliderActivity extends AppCompatActivity
                     i=0;
             }
         });
+
+        ArrayList<String> stringArray = new ArrayList<String>();
+
+        for (int i=0; i<50 ; i++)
+        stringArray.add(i + " no Item");
+        //Listview Code
+        ArrayAdapter modeAdapter = new ArrayAdapter(this, R.layout.list_item_adapter, R.id.provider, stringArray);
+        ListView LV_bottom = (ListView) findViewById(R.id.LV_bottom);
+        LV_bottom.setAdapter(modeAdapter);
     }
 }
