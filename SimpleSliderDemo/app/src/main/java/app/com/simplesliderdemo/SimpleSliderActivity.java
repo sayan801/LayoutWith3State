@@ -13,7 +13,8 @@ import android.widget.TextView;
 public class SimpleSliderActivity extends AppCompatActivity
 {
 
-    TextView top, middle, bottom;
+    TextView middle;
+    LinearLayout top, bottom;
     int DeviceTotalWidth, DeviceTotalHeight;
     int i = 33; // Initial value shoud be 33 for Default State
     @Override
@@ -22,9 +23,9 @@ public class SimpleSliderActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_slider);
 
-        top = (TextView) findViewById(R.id.TV_top);
+        top = (LinearLayout) findViewById(R.id.TV_top);
         middle = (TextView) findViewById(R.id.TV_middle);
-        bottom = (TextView) findViewById(R.id.TV_bottom);
+        bottom = (LinearLayout) findViewById(R.id.TV_bottom);
 
         DisplayMetrics metrics = getResources().getDisplayMetrics();
 

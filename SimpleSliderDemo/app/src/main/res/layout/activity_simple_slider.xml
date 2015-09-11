@@ -6,14 +6,15 @@
     android:orientation="vertical"
     tools:context=".SimpleSliderActivity" >
 
-    <TextView
+    <LinearLayout
         android:id="@+id/TV_top"
-        android:text="Map View"
+
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
         android:background="@android:color/holo_green_dark"
         android:gravity="center"
+        android:orientation="vertical"
         />
     <TextView
         android:id="@+id/TV_middle"
@@ -21,18 +22,19 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@android:color/darker_gray"
+        android:background="@android:color/holo_blue_bright"
         android:gravity="left|center"
         />
 
-    <TextView
+    <LinearLayout
         android:id="@+id/TV_bottom"
-        android:text="ListView"
+
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
-        android:background="@android:color/holo_blue_bright"
+        android:background="@android:color/holo_green_light"
         android:gravity="center"
+        android:orientation="vertical"
         />
 
 </LinearLayout>
