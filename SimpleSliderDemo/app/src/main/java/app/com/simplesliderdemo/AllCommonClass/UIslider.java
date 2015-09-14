@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -82,29 +84,8 @@ public class UIslider extends LinearLayout
             @Override
             public void onClick(View view)
             {
-//                commonMethodForChangeState();
-            }
-        });
-
-        LL_middle.setOnTouchListener(new OnTouchListener()
-        {
-            @Override
-            public boolean onTouch(View v, MotionEvent event)
-            {
-                if(event.getAction() == MotionEvent.ACTION_UP)
-                {
-//                    commonMethodForChangeState();
-//                    Toast.makeText(getContext(),"UP",Toast.LENGTH_SHORT).show();
-                    Log.d("<> UP", " ^ Up");
-                    // Do what you want
-                    return true;
-                }
-                else
-                {
-//                    Toast.makeText(getContext(),"Down",Toast.LENGTH_SHORT).show();
-                    Log.d("<> Down", " ~ Down");
-                }
-                return false;
+                //used as common method
+                commonMethodForChangeState();
             }
         });
 
@@ -136,6 +117,7 @@ public class UIslider extends LinearLayout
             //slider Top positon
             LL_top.setVisibility(View.GONE);
             LL_bottom.setVisibility(View.VISIBLE);
+
 
             LL_bottom.getLayoutParams().height = (int) (DeviceTotalHeight * 90 / 100);
             LL_middle.getLayoutParams().height = (int) (DeviceTotalHeight * 10 / 100);
