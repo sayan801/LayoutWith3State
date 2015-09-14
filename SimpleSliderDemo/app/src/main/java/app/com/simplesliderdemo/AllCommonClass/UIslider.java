@@ -62,8 +62,25 @@ public class UIslider extends LinearLayout
     protected void onFinishInflate()
     {
         super.onFinishInflate();
-        
-        noOfsteate = Integer.parseInt(getTag().toString()); //set Slider state Dynamically
+
+        //set Slider state Dynamically
+        if(getTag().toString().matches(""))
+        {
+            noOfsteate = 99;
+        }
+        else if(getTag().toString().matches("2"))
+        {
+            noOfsteate = 66;
+        }
+        else if(getTag().toString().matches("3"))
+        {
+            noOfsteate = 99;
+        }
+        else
+        {
+            noOfsteate = 99;
+        }
+
         //find the view Control
         LL_top = (LinearLayout) findViewById(R.id.LL_top);
         LL_middle = (LinearLayout) findViewById(R.id.LL_middle);
