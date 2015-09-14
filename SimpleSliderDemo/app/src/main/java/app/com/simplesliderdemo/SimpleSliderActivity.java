@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -14,6 +15,8 @@ import android.widget.TextView;
 import com.google.android.gms.maps.GoogleMap;
 
 import java.util.ArrayList;
+
+import app.com.simplesliderdemo.AllCommonClass.UIslider;
 
 public class SimpleSliderActivity extends FragmentActivity
 {
@@ -28,6 +31,7 @@ public class SimpleSliderActivity extends FragmentActivity
         // ListView Item
         for (int i=0; i<50 ; i++)
             stringArray.add(i + " no Item");
+
         //Listview Code
         ArrayAdapter modeAdapter = new ArrayAdapter(this, R.layout.list_item_adapter, R.id.provider, stringArray);
         ListView LV_bottom = (ListView) findViewById(R.id.LV_bottom);
@@ -35,11 +39,12 @@ public class SimpleSliderActivity extends FragmentActivity
 
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.LL_middle);
 
-
         TextView valueTV = new TextView(this);
         valueTV.setText("Hallo hallo");
+        valueTV.setId(R.id.layout1);
         valueTV.setTextColor(Color.GREEN);
-        valueTV.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
+        valueTV.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
         linearLayout.addView(valueTV);
+
     }
 }
