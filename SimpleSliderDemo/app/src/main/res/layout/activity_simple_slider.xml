@@ -9,6 +9,6 @@
     <app.com.simplesliderdemo.AllCommonClass.UIslider
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:tag="2"
+        android:tag="3"
         />
 </LinearLayout>

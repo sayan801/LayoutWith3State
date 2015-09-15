@@ -15,28 +15,37 @@
         android:gravity="center"
         android:orientation="vertical"
         >
-        <fragment
-            class="com.google.android.gms.maps.MapFragment"
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:id="@+id/map"
+            tools:context=".SimpleSliderActivity"
+            android:name="com.google.android.gms.maps.SupportMapFragment" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/LL_middle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/black"
+        android:background="@android:color/holo_green_light"
         android:gravity="center"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         >
         <TextView
             android:id="@+id/TV_middle"
             android:text="Counted search results"
-            android:layout_width="fill_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@android:color/holo_blue_bright"
-            android:gravity="center_horizontal|center"
+            android:layout_weight="9"
             />
+            <ImageView
+                android:id="@+id/IMG_slider_state"
+                android:src="@drawable/ic_cast_dark"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
     </LinearLayout>
 
     <LinearLayout

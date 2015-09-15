@@ -1,5 +1,6 @@
 package app.com.simplesliderdemo;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -43,7 +44,7 @@ public class SimpleSliderActivity extends FragmentActivity
         valueTV.setText("Hallo hallo");
         valueTV.setId(R.id.layout1);
         valueTV.setTextColor(Color.GREEN);
-        valueTV.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT));
+        valueTV.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
         linearLayout.addView(valueTV);
 
     }

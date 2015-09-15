@@ -154,8 +154,4 @@ public class UIslider extends LinearLayout
         if (step == noOfsteate)
             step = 0; //moved to initial State
     }
-    public void noOfsteate(int state)
-    {
-        noOfsteate = 66;
-    }
 }
