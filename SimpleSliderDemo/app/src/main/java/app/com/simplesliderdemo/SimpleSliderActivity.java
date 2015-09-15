@@ -83,7 +83,7 @@ public class SimpleSliderActivity extends FragmentActivity implements View.OnCli
         //  View child1 = LayoutInflater.from(this).inflate(R.layout.map_view, null);
         //Load child/includable XML -> sub controler
         View childLayout_map = LayoutInflater.from(this).inflate(R.layout.map_view,
-                (ViewGroup) findViewById(R.id.mySimpleXYPlot));
+                (ViewGroup) findViewById(R.id.map));
 
         //add map child/includable view
         inclusionViewGroup_top.addView(childLayout_map);
