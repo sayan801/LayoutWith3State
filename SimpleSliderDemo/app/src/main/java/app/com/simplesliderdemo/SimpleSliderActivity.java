@@ -60,17 +60,27 @@ public class SimpleSliderActivity extends FragmentActivity
         for (int i=0; i<50 ; i++)
             stringArray.add(i + " no Item");
 
-        //find top Linear Layout container
-        ViewGroup inclusionViewGroup = (ViewGroup)findViewById(R.id.LL_top);
+        //find TOP Linear Layout to add container
+        ViewGroup inclusionViewGroup_top = (ViewGroup)findViewById(R.id.LL_top);
         //Load child/includable XML
 
         //  View child1 = LayoutInflater.from(this).inflate(R.layout.map_view, null);
         //Load child/includable XML -> sub controler
-        View childLayout = LayoutInflater.from(this).inflate(R.layout.map_view,
+        View childLayout_map = LayoutInflater.from(this).inflate(R.layout.map_view,
                 (ViewGroup) findViewById(R.id.map));
 
         //add map child/includable view
-        inclusionViewGroup.addView(childLayout);
+        inclusionViewGroup_top.addView(childLayout_map);
+
+        //BOTTOM view
+        //find Bottom Linear Layout container
+        ViewGroup inclusionViewGroup_bottom = (ViewGroup)findViewById(R.id.LL_bottom);
+        ListView listView = new ListView(this);
+        listView.setId(R.id.layout1);
+        listView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+
+        //add map child/includable view
+        inclusionViewGroup_bottom.addView(listView);
 
         Double providerLatitude = 0.0, providerLongitude = 0.0;
         //map
@@ -173,8 +183,10 @@ public class SimpleSliderActivity extends FragmentActivity
             Log.d("CRASH 161 ", e.toString());
         }
 
+
+
         //Listview Code
-        ListView LV_bottom = (ListView) findViewById(R.id.LV_bottom);
+        ListView LV_bottom = (ListView) findViewById(R.id.layout1);
         LV_bottom.setAdapter(new ProviderSearchResultAdapter(getApplicationContext()));
     }
     /* ****** Custom BaseAdapter ****** */
@@ -223,7 +235,6 @@ public class SimpleSliderActivity extends FragmentActivity
             LayoutInflater inflater = LayoutInflater.from(context);
 
             convertView = inflater.inflate(R.layout.list_item_adapter, null);
-
 
             TextView FirstName = (TextView) convertView.findViewById(R.id.provider);
             TextView BusinessAddress = (TextView) convertView.findViewById(R.id.provider_address);
