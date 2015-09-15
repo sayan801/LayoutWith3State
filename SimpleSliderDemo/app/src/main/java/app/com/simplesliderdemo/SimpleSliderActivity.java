@@ -63,9 +63,14 @@ public class SimpleSliderActivity extends FragmentActivity
         //find top Linear Layout container
         ViewGroup inclusionViewGroup = (ViewGroup)findViewById(R.id.LL_top);
         //Load child/includable XML
-        View child1 = LayoutInflater.from(this).inflate(R.layout.map_view, null);
+
+        //  View child1 = LayoutInflater.from(this).inflate(R.layout.map_view, null);
+        //Load child/includable XML -> sub controler
+        View childLayout = LayoutInflater.from(this).inflate(R.layout.map_view,
+                (ViewGroup) findViewById(R.id.map));
+
         //add map child/includable view
-        inclusionViewGroup.addView(child1);
+        inclusionViewGroup.addView(childLayout);
 
         Double providerLatitude = 0.0, providerLongitude = 0.0;
         //map
