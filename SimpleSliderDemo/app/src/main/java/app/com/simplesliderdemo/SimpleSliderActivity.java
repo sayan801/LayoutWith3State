@@ -1,9 +1,13 @@
 package app.com.simplesliderdemo;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,8 +16,11 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -53,11 +60,6 @@ public class SimpleSliderActivity extends FragmentActivity
         for (int i=0; i<50 ; i++)
             stringArray.add(i + " no Item");
 
-        //Listview Code
-        ArrayAdapter modeAdapter = new ArrayAdapter(this, R.layout.list_item_adapter, R.id.provider, stringArray);
-        ListView LV_bottom = (ListView) findViewById(R.id.LV_bottom);
-        LV_bottom.setAdapter(modeAdapter);
-
         //find top Linear Layout container
         ViewGroup inclusionViewGroup = (ViewGroup)findViewById(R.id.LL_top);
         //Load child/includable XML
@@ -81,7 +83,7 @@ public class SimpleSliderActivity extends FragmentActivity
             address = new String[jsonArray.length()];
 
             //set counted search result
-            middle.setText(jsonArray.length() + " Data found");
+            middle.setText("  " + jsonArray.length() + " Data found");
 
             JSONObject jsonObject1;
             for (int i = 0; i < jsonArray.length(); i++)
@@ -164,6 +166,66 @@ public class SimpleSliderActivity extends FragmentActivity
         catch (Exception e)
         {
             Log.d("CRASH 161 ", e.toString());
+        }
+
+        //Listview Code
+        ListView LV_bottom = (ListView) findViewById(R.id.LV_bottom);
+        LV_bottom.setAdapter(new ProviderSearchResultAdapter(getApplicationContext()));
+    }
+    /* ****** Custom BaseAdapter ****** */
+    public class ProviderSearchResultAdapter extends BaseAdapter
+    {
+        Context context;
+
+        public ProviderSearchResultAdapter(Context context)
+        {
+            this.context = context;
+        }
+
+        @Override
+        public int getCount()
+        {
+            return firstName.length;
+        }
+
+        @Override
+        public Object getItem(int position)
+        {
+            return position;
+        }
+
+        @Override
+        public long getItemId(int position)
+        {
+            return position;
+        }
+
+        @Override
+        public int getViewTypeCount()
+        {
+            return getCount();
+        }
+
+        @Override
+        public int getItemViewType(int position)
+        {
+            return position;
+        }
+        @SuppressLint("InflateParams")
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent)
+        {
+            LayoutInflater inflater = LayoutInflater.from(context);
+
+            convertView = inflater.inflate(R.layout.list_item_adapter, null);
+
+
+            TextView FirstName = (TextView) convertView.findViewById(R.id.provider);
+            TextView BusinessAddress = (TextView) convertView.findViewById(R.id.provider_address);
+
+            FirstName.setText(firstName[position]+"");
+            BusinessAddress.setText(address[position]+"");
+            return convertView;
         }
     }
 }
