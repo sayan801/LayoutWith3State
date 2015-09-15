@@ -6,7 +6,9 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -37,13 +39,14 @@ public class SimpleSliderActivity extends FragmentActivity
 
     public String[] firstName, providerNpiID, lat, longg, address;
     GoogleMap map;
+    TextView middle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_slider);
-
+        middle = (TextView) findViewById(R.id.TV_middle);
         ArrayList<String> stringArray = new ArrayList<String>();
 
         // ListView Item
@@ -55,15 +58,10 @@ public class SimpleSliderActivity extends FragmentActivity
         ListView LV_bottom = (ListView) findViewById(R.id.LV_bottom);
         LV_bottom.setAdapter(modeAdapter);
 
-
-        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.LL_middle);
-
-        TextView valueTV = new TextView(this);
-        valueTV.setText("Hallo hallo");
-        valueTV.setId(R.id.layout1);
-        valueTV.setTextColor(Color.GREEN);
-        valueTV.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-        linearLayout.addView(valueTV);
+        ViewGroup inclusionViewGroup = (ViewGroup)findViewById(R.id.LL_top);
+        View child1 = LayoutInflater.from(this).inflate(
+                R.layout.map_view, null);
+        inclusionViewGroup.addView(child1);
 
         Double providerLatitude = 0.0, providerLongitude = 0.0;
         //map
@@ -72,13 +70,16 @@ public class SimpleSliderActivity extends FragmentActivity
         {
             JSONObject jsonObject = new JSONObject(jsonData);
             JSONArray jsonArray = jsonObject.getJSONArray("npidata");
-            Log.d("jsonData", jsonData.replace("\"", ""));
-            Log.d("jsonArray", jsonArray.toString());
+
+            //set Array Size;
             firstName = new String[jsonArray.length()];
             providerNpiID = new String[jsonArray.length()];
             lat = new String[jsonArray.length()];
             longg = new String[jsonArray.length()];
             address = new String[jsonArray.length()];
+
+            //set counted search result
+            middle.setText(jsonArray.length() + " Data found");
 
             JSONObject jsonObject1;
             for (int i = 0; i < jsonArray.length(); i++)

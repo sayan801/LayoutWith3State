@@ -15,17 +15,7 @@
         android:gravity="center"
         android:orientation="vertical"
         >
-        <include
-            android:id="@+id/CommonSocialHeader"
-            layout="@layout/map_view"  />
-
-        <!--<fragment xmlns:android="http://schemas.android.com/apk/res/android"-->
-            <!--xmlns:tools="http://schemas.android.com/tools"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:id="@+id/map"-->
-            <!--tools:context=".SimpleSliderActivity"-->
-            <!--android:name="com.google.android.gms.maps.SupportMapFragment" />-->
+        <!--Top, here include view should be Programetically-->
     </LinearLayout>
 
     <LinearLayout
@@ -60,6 +50,7 @@
         android:gravity="center"
         android:orientation="vertical"
         >
+        <!--Bottom, here include view should be Programetically-->
         <ListView
             android:id="@+id/LV_bottom"
             android:layout_width="match_parent"
