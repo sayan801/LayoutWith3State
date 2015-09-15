@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.androidplot.xy.XYPlot;
+
 import app.com.simplesliderdemo.R;
 
 public class AndroidPlotActivity extends Activity
 {
-
+    public XYPlot mySimpleXYPlot;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
