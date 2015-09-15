@@ -6,10 +6,19 @@
     android:orientation="vertical"
     tools:context=".AndroidPlotActivity" >
 
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:text="Go to Slider screen"
+        android:clickable="true"
+        android:onClick="goto_slider_demo"
+        />
+
     <app.com.simplesliderdemo.AllCommonClass.UIslider
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:tag="2"
         />
+
 </LinearLayout>
 

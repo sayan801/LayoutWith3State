@@ -1,6 +1,7 @@
 package app.com.simplesliderdemo.AllCommonClass;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import app.com.simplesliderdemo.R;
+import app.com.simplesliderdemo.SimpleSliderActivity;
 
 public class AndroidPlotActivity extends Activity
 {
@@ -201,5 +203,10 @@ public class AndroidPlotActivity extends Activity
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void goto_slider_demo(View view)
+    {
+        Intent intent = new Intent(getApplicationContext(), SimpleSliderActivity.class);
+        startActivity(intent);
     }
 }

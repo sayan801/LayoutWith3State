@@ -59,16 +59,7 @@ public class SimpleSliderActivity extends FragmentActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_slider);
         middle = (TextView) findViewById(R.id.TV_middle);
-        middle.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            //On click yes function
-            public void onClick(View view)
-            {
-                Intent intent = new Intent(getApplicationContext(), AndroidPlotActivity.class);
-                startActivity(intent);
-            }
-        });
+
         ArrayList<String> stringArray = new ArrayList<String>();
 
         // ListView Item
@@ -338,5 +329,10 @@ public class SimpleSliderActivity extends FragmentActivity implements View.OnCli
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void goto_android_plot(View view)
+    {
+        Intent intent = new Intent(getApplicationContext(), AndroidPlotActivity.class);
+        startActivity(intent);
     }
 }
