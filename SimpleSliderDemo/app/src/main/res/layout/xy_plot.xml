@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <com.androidplot.xy.XYPlot
+        android:id="@+id/mySimpleXYPlot"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        androidPlot.titleWidget.labelPaint.textSize="15dp"
+        androidPlot.domainLabelWidget.labelPaint.textSize="15dp"
+        androidPlot.rangeLabelWidget.labelPaint.textSize="15"
+        androidPlot.graphWidget.marginTop="35dp"
+        androidPlot.graphWidget.marginLeft="5dp"
+        androidPlot.graphWidget.marginBottom="35dp"
+        androidPlot.graphWidget.marginRight="20dp"
+        androidPlot.graphWidget.rangeLabelPaint.textSize="15dp"
+        androidPlot.graphWidget.rangeOriginLabelPaint.textSize="15dp"
+        androidPlot.graphWidget.domainLabelPaint.textSize="15dp"
+        androidPlot.graphWidget.domainOriginLabelPaint.textSize="20dp"
+        androidPlot.legendWidget.textPaint.textSize="20dp"
+        androidPlot.legendWidget.heightMetric.value="125dp"
+        androidPlot.legendWidget.positionMetrics.anchor="right_bottom"
+        androidPlot.graphWidget.gridLinePaint.color="#000000"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        />
+</LinearLayout>

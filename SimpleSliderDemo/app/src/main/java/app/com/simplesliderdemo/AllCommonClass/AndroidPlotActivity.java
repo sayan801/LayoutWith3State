@@ -3,8 +3,11 @@ package app.com.simplesliderdemo.AllCommonClass;
 import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.androidplot.xy.XYPlot;
 
@@ -18,6 +21,18 @@ public class AndroidPlotActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_plot);
+
+        //find TOP Linear Layout to add container
+        ViewGroup inclusionViewGroup_top = (ViewGroup)findViewById(R.id.LL_top);
+        //Load child/includable XML
+
+        //  View child1 = LayoutInflater.from(this).inflate(R.layout.map_view, null);
+        //Load child/includable XML -> sub controler
+        View childLayout_map = LayoutInflater.from(this).inflate(R.layout.xy_plot,
+                (ViewGroup) findViewById(R.id.mySimpleXYPlot));
+
+        //add map child/includable view
+        inclusionViewGroup_top.addView(childLayout_map);
     }
 
     @Override
