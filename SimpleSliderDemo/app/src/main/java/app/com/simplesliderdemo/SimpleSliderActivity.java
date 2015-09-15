@@ -3,6 +3,7 @@ package app.com.simplesliderdemo;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -11,6 +12,8 @@ import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -38,6 +41,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import app.com.simplesliderdemo.AllCommonClass.AndroidPlotActivity;
 import app.com.simplesliderdemo.AllCommonClass.UIslider;
 
 public class SimpleSliderActivity extends FragmentActivity implements View.OnClickListener, GoogleMap.OnMarkerClickListener, GoogleMap.OnInfoWindowClickListener
@@ -55,6 +59,16 @@ public class SimpleSliderActivity extends FragmentActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_slider);
         middle = (TextView) findViewById(R.id.TV_middle);
+        middle.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            //On click yes function
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(getApplicationContext(), AndroidPlotActivity.class);
+                startActivity(intent);
+            }
+        });
         ArrayList<String> stringArray = new ArrayList<String>();
 
         // ListView Item
@@ -89,7 +103,7 @@ public class SimpleSliderActivity extends FragmentActivity implements View.OnCli
         map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
         map.setOnMarkerClickListener(this);
         map.setOnInfoWindowClickListener(this);
-        
+
         try 
         {
             JSONObject jsonObject = new JSONObject(jsonData);
@@ -301,5 +315,28 @@ public class SimpleSliderActivity extends FragmentActivity implements View.OnCli
             BusinessAddress.setText(address[position]+"");
             return convertView;
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_android_plot, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings)
+        {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

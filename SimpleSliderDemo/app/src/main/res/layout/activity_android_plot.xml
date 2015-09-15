@@ -4,18 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SimpleSliderActivity" >
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="30dp"
-        android:text="Show search result parameter"
-        android:gravity="center"
-        android:layout_gravity="center"
-        />
+    tools:context=".AndroidPlotActivity" >
 
     <app.com.simplesliderdemo.AllCommonClass.UIslider
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:tag="3"
+        android:tag="2"
         />
 </LinearLayout>
+

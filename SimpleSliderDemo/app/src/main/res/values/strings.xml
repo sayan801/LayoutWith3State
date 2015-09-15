@@ -6,4 +6,5 @@
     <string name="google_api_key">AIzaSyAozLvwFm6Y7_t6-RtSnnSY_F9IvOpKir0</string>
     <item type="id" name="layout1" />
     <item type="id" name="gMap_new" />
+    <string name="title_activity_android_plot">AndroidPlotActivity</string>
 </resources>
