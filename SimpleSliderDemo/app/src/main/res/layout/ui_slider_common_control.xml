@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@android:color/white"
     >
 
     <LinearLayout
@@ -11,9 +12,9 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
-        android:background="@android:color/holo_green_dark"
         android:gravity="center"
         android:orientation="vertical"
+        android:background="@android:color/white"
         >
         <!--Top, here include view should be Programetically-->
     </LinearLayout>
@@ -22,9 +23,9 @@
         android:id="@+id/LL_middle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_green_light"
         android:gravity="center"
         android:orientation="horizontal"
+        android:background="@android:color/holo_green_light"
         >
         <TextView
             android:id="@+id/TV_middle"
@@ -49,6 +50,7 @@
         android:layout_weight="4"
         android:gravity="center"
         android:orientation="vertical"
+        android:background="@android:color/white"
         >
         <!--Bottom, here include view should be Programetically-->
     </LinearLayout>

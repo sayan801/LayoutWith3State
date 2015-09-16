@@ -67,7 +67,7 @@ public class AndroidExpandableListAdapter extends BaseExpandableListAdapter {
 			convertView = infalInflater.inflate(R.layout.class_booking_item, null);
 			viewHolder.tv_title= (TextView) convertView
 					.findViewById(R.id.tv_inner_list);
-			
+
 			viewHolder.iv_image=(ImageView) convertView
 					.findViewById(R.id.iv_image);
 			
