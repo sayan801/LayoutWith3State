@@ -35,7 +35,7 @@
             />
             <ImageView
                 android:id="@+id/IMG_slider_state"
-                android:src="@drawable/ic_cast_dark"
+                android:src="@drawable/ic_plusone_medium_off_client"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

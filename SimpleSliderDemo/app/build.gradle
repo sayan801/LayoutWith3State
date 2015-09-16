@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 19
+        targetSdkVersion 21
     }
     buildTypes {
         release {
@@ -17,7 +17,7 @@ android {
 }
 
 dependencies {
-    compile 'com.google.android.gms:play-services:7.8.0'
+    compile 'com.google.android.gms:play-services:5.0.89'
     compile files('libs/android-google-maps-api11.jar')
     compile files('libs/androidplot-core-0.6.1.jar')
 }

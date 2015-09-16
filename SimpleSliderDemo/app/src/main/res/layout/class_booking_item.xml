@@ -63,7 +63,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ic_cast_dark"
+                android:background="@drawable/ic_plusone_medium_off_client"
                 android:padding="8dp" />
 
         </FrameLayout>

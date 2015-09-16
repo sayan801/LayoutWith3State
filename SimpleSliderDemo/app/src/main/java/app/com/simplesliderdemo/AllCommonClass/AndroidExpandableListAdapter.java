@@ -145,7 +145,7 @@ public class AndroidExpandableListAdapter extends BaseExpandableListAdapter {
 
 
 		
-			int imageResourceId = isExpanded ? R.drawable.ic_cast_dark : R.drawable.ic_cast_disabled_light;
+			int imageResourceId = isExpanded ? R.drawable.ic_plusone_medium_off_client : R.drawable.ic_plusone_medium_off_client;
 			image.setImageResource(imageResourceId);
 			
 			image.setVisibility(View.VISIBLE);

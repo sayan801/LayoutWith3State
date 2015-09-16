@@ -2,7 +2,6 @@ package app.com.simplesliderdemo.AllCommonClass;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -62,7 +61,7 @@ public class AndroidPlotActivity extends Activity
 
             ArrayList<ExpandableCollection> arr_obj3 = new ArrayList<ExpandableCollection>();
 
-            arr_obj3.add(new ExpandableCollection("Open Sky"+i, "Okkbbder", R.drawable.ic_cast_dark));
+            arr_obj3.add(new ExpandableCollection("Open Sky"+i, "Okkbbder", R.drawable.ic_plusone_medium_off_client));
 
             ExpandableCollection.expandable_hashmap.put(ExpandableCollection.key_value.get(i), arr_obj3);
 

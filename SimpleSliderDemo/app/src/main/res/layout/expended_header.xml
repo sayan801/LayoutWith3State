@@ -46,7 +46,7 @@
             android:id="@+id/iv_exp"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/ic_cast_dark"
+            android:src="@drawable/ic_plusone_medium_off_client"
             android:adjustViewBounds="true"
             android:scaleType="fitEnd"/>
 
