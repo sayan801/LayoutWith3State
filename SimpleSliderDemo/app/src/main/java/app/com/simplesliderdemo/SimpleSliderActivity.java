@@ -60,13 +60,6 @@ public class SimpleSliderActivity extends FragmentActivity implements View.OnCli
         setContentView(R.layout.activity_simple_slider);
         middle = (TextView) findViewById(R.id.TV_middle);
 
-        ArrayList<String> stringArray = new ArrayList<String>();
-
-        // ListView Item
-        for (int i=0; i<50 ; i++)
-            stringArray.add(i + " no Item");
-        listView = new ListView(this);
-
         //find TOP Linear Layout to add container
         ViewGroup inclusionViewGroup_top = (ViewGroup)findViewById(R.id.LL_top);
         //Load child/includable XML
@@ -83,6 +76,7 @@ public class SimpleSliderActivity extends FragmentActivity implements View.OnCli
         //find Bottom Linear Layout container
         ViewGroup inclusionViewGroup_bottom = (ViewGroup)findViewById(R.id.LL_bottom);
 
+        listView = new ListView(this);
         listView.setId(R.id.layout1);
         listView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 
