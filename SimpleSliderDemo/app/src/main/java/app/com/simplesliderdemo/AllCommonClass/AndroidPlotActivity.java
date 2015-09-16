@@ -86,9 +86,9 @@ public class AndroidPlotActivity extends Activity
                         if (ExpandableCollection.expandable_hashmap.size() > 0) {
                             ExpandableCollection obj_exp = ExpandableCollection.expandable_hashmap
                                     .get(key).get(childPosition);
-
-                            Toast.makeText(AndroidPlotActivity.this, "Details :" + obj_exp.message,
-                                    Toast.LENGTH_LONG).show();
+//
+//                            Toast.makeText(AndroidPlotActivity.this, "Details :" + obj_exp.message,
+//                                    Toast.LENGTH_LONG).show();
                         }
                     }
                 }
@@ -118,7 +118,7 @@ public class AndroidPlotActivity extends Activity
 			/*ImageView Image_Group_Indicator = (ImageView) v.findViewById(R.id.ListView_Group_Indicator);
 			Image_Group_Indicator.setImageDrawable(getResources().getDrawable(R.drawable.openindicator));*/
 
-                                                        Toast.makeText(getApplicationContext(),"+++++",Toast.LENGTH_SHORT).show();
+//                                                        Toast.makeText(getApplicationContext(),"+++++",Toast.LENGTH_SHORT).show();
                                                     } else {
 
                   /*TextView  TextView = (TextView) v.findViewById(R.id.textView2);
@@ -126,7 +126,7 @@ public class AndroidPlotActivity extends Activity
 			/*ImageView Image_Group_Indicator = (ImageView) v.findViewById(R.id.ListView_Group_Indicator);
 			Image_Group_Indicator.setImageDrawable(getResources().getDrawable(R.drawable.collapsedindicator));
 */
-                                                        Toast.makeText(getApplicationContext(),"-----------",Toast.LENGTH_SHORT).show();
+//                                                        Toast.makeText(getApplicationContext(),"-----------",Toast.LENGTH_SHORT).show();
                                                     }
 
 
@@ -173,7 +173,7 @@ public class AndroidPlotActivity extends Activity
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
 
-                Toast.makeText(getApplicationContext(), "++++", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "++++", Toast.LENGTH_SHORT).show();
 
                 return false;
             }
