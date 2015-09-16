@@ -92,8 +92,11 @@ public class SimpleSliderActivity extends FragmentActivity implements View.OnCli
         Double providerLatitude = 0.0, providerLongitude = 0.0;
         //map
         map = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
-        map.setOnMarkerClickListener(this);
-        map.setOnInfoWindowClickListener(this);
+        if(map != null)
+        {
+            map.setOnMarkerClickListener(this);
+            map.setOnInfoWindowClickListener(this);
+        }
 
         try
         {
@@ -177,16 +180,25 @@ public class SimpleSliderActivity extends FragmentActivity implements View.OnCli
 
                 providerLatitude = Double.parseDouble(lat[i]);
                 providerLongitude = Double.parseDouble(longg[i]);
-                map.addMarker(new MarkerOptions()
-                        .position(new LatLng(providerLatitude, providerLongitude))
-                                .title(firstName[i])
-                                .snippet(address[i])
+                if(map != null)
+                {
+                    map.addMarker(new MarkerOptions()
+                                    .position(new LatLng(providerLatitude, providerLongitude))
+                                    .title(firstName[i])
+                                    .snippet(address[i])
                         /*.icon(IconMarkerplot)*/);
+                }
+
+
             }
 
-            //1st marker as Center position
-            map.animateCamera(CameraUpdateFactory.newLatLngZoom(
-                    new LatLng(Double.parseDouble(lat[0]), Double.parseDouble(longg[0])), 9));
+            if(map != null)
+            {
+                //1st marker as Center position
+                map.animateCamera(CameraUpdateFactory.newLatLngZoom(
+                        new LatLng(Double.parseDouble(lat[0]), Double.parseDouble(longg[0])), 9));
+            }
+
         }
         catch (Exception e)
         {
