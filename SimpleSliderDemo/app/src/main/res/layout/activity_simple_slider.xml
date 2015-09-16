@@ -5,15 +5,39 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".SimpleSliderActivity" >
-
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
     <Button
-        android:layout_width="fill_parent"
-        android:layout_height="45dp"
-        android:text="goto android Plot"
+        android:id="@+id/BTN_graph"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Graph"
         android:clickable="true"
         android:onClick="goto_android_plot"
         />
-
+    <Button
+        android:id="@+id/BTN_400_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="400Data"
+        android:clickable="true"
+        android:onClick="goto_400_data"
+        />
+    <Button
+        android:id="@+id/BTN_10k_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="10kData"
+        android:clickable="true"
+        android:onClick="goto_10k_data"
+        />
+</LinearLayout>
     <app.com.simplesliderdemo.AllCommonClass.UIslider
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
